@@ -1,4 +1,5 @@
 /// <reference path = "\phaser\phaser.d.ts"/>
+/// <reference path = "node_modules\@orange-games\phaser-input\build\phaser-input.d.ts"/>
 var Game;
 (function (Game) {
     var VectorGame = /** @class */ (function () {
@@ -10,9 +11,12 @@ var Game;
         }
         VectorGame.prototype.preload = function () {
             // Preload Watt
-            this.game.load.image("watt", "\assets\img\watt.PNG");
+            this.game.load.image("watt", "/assets/img/watt.PNG");
+            this.game.add.plugin(new PhaserInput.Plugin(this.game, this.game.plugins));
         };
         VectorGame.prototype.create = function () {
+            this.game.state.add("IntroScreen", AllStates.IntroState, true);
+            this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
         };
         return VectorGame;
     }());

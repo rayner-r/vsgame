@@ -1,5 +1,5 @@
 ﻿/// <reference path = "\phaser\phaser.d.ts"/>
-
+/// <reference path = "node_modules\@orange-games\phaser-input\build\phaser-input.d.ts"/>
 module Game {
     export class VectorGame {
 
@@ -14,11 +14,13 @@ module Game {
 
         preload() {
             // Preload Watt
-            this.game.load.image("watt", "\assets\img\watt.PNG");
+            this.game.load.image("watt", "/assets/img/watt.PNG");
+            this.game.add.plugin(new PhaserInput.Plugin(this.game, this.game.plugins));
         }
 
         create() {
-
+            this.game.state.add("IntroScreen",AllStates.IntroState,true)
+            this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
         }
 
     }
