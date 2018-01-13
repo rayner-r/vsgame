@@ -6,7 +6,8 @@ var Game;
         function VectorGame() {
             this.game = new Phaser.Game(1280, 720, Phaser.AUTO, 'content', {
                 create: this.create,
-                preload: this.preload
+                preload: this.preload,
+                update: this.update
             });
         }
         VectorGame.prototype.preload = function () {
@@ -16,7 +17,10 @@ var Game;
         };
         VectorGame.prototype.create = function () {
             this.game.state.add("IntroScreen", AllStates.IntroState, true);
-            this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+            //this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+        };
+        VectorGame.prototype.update = function () {
+            console.log("hi");
         };
         return VectorGame;
     }());
