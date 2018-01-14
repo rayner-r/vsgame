@@ -1,5 +1,6 @@
 ﻿/// <reference path = "\phaser\phaser.d.ts"/>
 /// <reference path = "node_modules\@orange-games\phaser-input\build\phaser-input.d.ts"/>
+
 module Game {
     export class VectorGame {
 

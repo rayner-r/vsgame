@@ -1,4 +1,4 @@
-﻿module Geom {
+﻿module geom {
      export function createChatBox(centre_x: number, centre_y: number, box_length: number, passedInGame: Phaser.Game) {
 
         var box_height = box_length / 1.5;
@@ -25,4 +25,14 @@
 
         return chatbox;
     }
+
+     export function createChat(text, centre_x, centre_y, width, passedInGame) {
+
+         passedInGame.add.text(centre_x - (width / 2), centre_y - width/3, text, {
+                                                                                            wordWrapWidth: width,
+                                                                                            wordWrap: true
+         });
+
+         geom.createChatBox(centre_x, centre_y, width + 10, passedInGame);
+     }
 }

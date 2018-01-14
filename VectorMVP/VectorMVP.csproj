@@ -76,6 +76,7 @@
     <TypeScriptCompile Include="phaser\phaser.d.ts" />
     <TypeScriptCompile Include="phaser\pixi.d.ts" />
     <TypeScriptCompile Include="src\geom\chatbox.ts" />
+    <TypeScriptCompile Include="src\states\ChatState.ts" />
     <TypeScriptCompile Include="src\states\IntroState.ts" />
   </ItemGroup>
   <ItemGroup>

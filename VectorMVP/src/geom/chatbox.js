@@ -1,5 +1,5 @@
-var Geom;
-(function (Geom) {
+var geom;
+(function (geom) {
     function createChatBox(centre_x, centre_y, box_length, passedInGame) {
         var box_height = box_length / 1.5;
         var box_indent = box_length / 10;
@@ -18,6 +18,14 @@ var Geom;
         chatbox.alpha = 0.2;
         return chatbox;
     }
-    Geom.createChatBox = createChatBox;
-})(Geom || (Geom = {}));
+    geom.createChatBox = createChatBox;
+    function createChat(text, centre_x, centre_y, width, passedInGame) {
+        passedInGame.add.text(centre_x - (width / 2), centre_y - width / 3, text, {
+            wordWrapWidth: width,
+            wordWrap: true
+        });
+        geom.createChatBox(centre_x, centre_y, width + 10, passedInGame);
+    }
+    geom.createChat = createChat;
+})(geom || (geom = {}));
 //# sourceMappingURL=chatbox.js.map
