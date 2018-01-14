@@ -5,6 +5,7 @@ module Game {
     export class VectorGame {
 
         game: Phaser.Game;
+        name: string;
 
         constructor() {
             this.game = new Phaser.Game(1280, 720, Phaser.AUTO, 'content', {
@@ -21,11 +22,11 @@ module Game {
         }
 
         create() {
-            this.game.state.add("IntroScreen",AllStates.IntroState,true)
+            this.game.state.add("IntroScreen", AllStates.IntroState, true);
+            this.game.state.add("ChatState", AllStates.ChatState, false);
             //this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
         }
         update() {
-            console.log("hi")
         }
     }
 }

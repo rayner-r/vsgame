@@ -17,10 +17,10 @@ var Game;
         };
         VectorGame.prototype.create = function () {
             this.game.state.add("IntroScreen", AllStates.IntroState, true);
+            this.game.state.add("ChatState", AllStates.ChatState, false);
             //this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
         };
         VectorGame.prototype.update = function () {
-            console.log("hi");
         };
         return VectorGame;
     }());
