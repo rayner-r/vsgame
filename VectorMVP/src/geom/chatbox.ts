@@ -29,9 +29,9 @@
      export function createChat(text, centre_x, centre_y, width, passedInGame) {
 
          passedInGame.add.text(centre_x - (width / 2), centre_y - width/3, text, {
-                                                                                            wordWrapWidth: width,
-                                                                                            wordWrap: true
-         });
+                                                                                    wordWrapWidth: width,
+                                                                                    wordWrap: true
+                                                                                  });
 
          geom.createChatBox(centre_x, centre_y, width + 10, passedInGame);
      }

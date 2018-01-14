@@ -51,17 +51,20 @@
                 this.name = this.usernameInputField.value;
                 console.log("your name is:" + this.name)
                 this.usernameInputField.destroy(true);
-                //this.chat.destroy(true);
+                this.chat.destroy(true);
+                //this.chat = geom.createChat("I'm Watt, Watts ur name? ( help me im trapped) ", this.game.world.centerX, this.game.world.centerY, 300, this.game);
             }
         }
 
         update() {
-            this.usernameInputField.update();
 
-            var enter_key = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
+            if (this.usernameInputField) {
+                this.usernameInputField.update();
 
-            enter_key.onDown.add(this.usernameEntered, this);
+                var enter_key = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
 
+                enter_key.onDown.add(this.usernameEntered, this);
+            }
         }
     }
 }
